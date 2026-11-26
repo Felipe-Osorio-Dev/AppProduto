@@ -34,11 +34,11 @@ jobs:
 
       # 4. Restaura os pacotes NuGet
       - name: Restore dependencies
-        run: dotnet restore MyApp/MyApp.csproj
+        run: dotnet restore AppProduto/AppProduto.csproj
 
       # 5. Compila o projeto
       - name: Build Android
-        run: dotnet build MyApp/MyApp.csproj
+        run: dotnet build AppProduto/AppProduto.csproj
           -f net10.0-android
           -c Release
           --no-restore
