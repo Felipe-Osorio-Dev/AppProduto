@@ -1,4 +1,5 @@
 ﻿using AppProduto.Data;
+using AppProduto.Repository;
 using Microsoft.Extensions.Logging;
 
 namespace AppProduto
@@ -15,8 +16,12 @@ namespace AppProduto
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
+            //Database
             builder.Services.AddSingleton<AppDataBase>();
+
+            //Repository
+            builder.Services.AddSingleton<IProductRepository, ProductRepository>();
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
